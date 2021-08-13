@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dimed.geometricShapes.models.SquareModel;
-
+/**
+ * 
+ * @author Chrystian Rocha
+ *
+ */
 @RestController
 @RequestMapping("api/shaders/square")
 public class SquareRestController {

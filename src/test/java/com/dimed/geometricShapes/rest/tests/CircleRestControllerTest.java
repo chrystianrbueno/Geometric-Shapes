@@ -22,7 +22,7 @@ public class CircleRestControllerTest {
 	private MockMvc mvc;
 	
 	@Test
-	public void testReturnCircleJson() throws Exception {
+	public void ShouldReturnJsonFromCircleUsingGet() throws Exception {
 		mvc.perform(MockMvcRequestBuilders.get("/api/shaders/circle/1"))
 		.andExpect(status().isOk())
 		.andExpect(content().string("{\"area\":3.141592653589793}"));

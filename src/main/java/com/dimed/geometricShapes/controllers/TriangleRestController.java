@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dimed.geometricShapes.models.TriangleModel;
-
+/**
+ * 
+ * @author Chrystian Rocha
+ *
+ */
 @RestController
 @RequestMapping("api/shaders/triangle")
 public class TriangleRestController {

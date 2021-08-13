@@ -9,7 +9,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
+/**
+ * 
+ * @author Chrystian Rocha
+ *
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 public class TriangleRestControllerTest {
@@ -18,7 +22,7 @@ public class TriangleRestControllerTest {
 	MockMvc mvc;
 	
 	@Test
-	public void testReturnTriangleJson() throws Exception {
+	public void ShouldReturnJsonFromTriangleUsingGet() throws Exception {
 		mvc.perform(MockMvcRequestBuilders
 				.get("/api/shaders/triangle/3/4"))
 				.andExpect(status().isOk())

@@ -9,7 +9,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
+/**
+ * 
+ * @author Chrystian Rocha
+ *
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 public class SquareRestControllerTest {
@@ -18,7 +22,7 @@ public class SquareRestControllerTest {
 	MockMvc mvc;
 	
 	@Test
-	public void testReturnSquareJson() throws Exception {
+	public void ShouldReturnJsonFromSquareUsingGet() throws Exception {
 		mvc.perform(MockMvcRequestBuilders
 				.get("/api/shaders/square/2"))
 				.andExpect(status().isOk())

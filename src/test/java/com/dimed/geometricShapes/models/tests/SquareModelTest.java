@@ -5,7 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import com.dimed.geometricShapes.models.SquareModel;
-
+/**
+ * 
+ * @author Chrystian Rocha
+ *
+ */
 public class SquareModelTest {
 
 	@Test

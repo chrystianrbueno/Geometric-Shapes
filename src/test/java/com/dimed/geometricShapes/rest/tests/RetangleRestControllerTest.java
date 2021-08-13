@@ -14,6 +14,11 @@ import org.springframework.boot.test.context.SpringBootTest;
  *
  */
 import org.springframework.test.web.servlet.MockMvc;
+/**
+ * 
+ * @author Chrystian Rocha
+ *
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 public class RetangleRestControllerTest {
@@ -22,7 +27,7 @@ public class RetangleRestControllerTest {
 	private MockMvc mvc;
 	
 	@Test
-	public void testReturnRetangleJson() throws Exception {
+	public void ShouldReturnJsonFromRetangleUsingGet() throws Exception {
 		mvc.perform(get("/api/shaders/retangle/2/4"))
 		.andExpect(status().isOk())
 		.andExpect(content().string("{\"area\":8.0}"));

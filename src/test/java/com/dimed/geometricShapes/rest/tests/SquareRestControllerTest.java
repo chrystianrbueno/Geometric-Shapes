@@ -22,10 +22,17 @@ public class SquareRestControllerTest {
 	MockMvc mvc;
 	
 	@Test
-	public void ShouldReturnJsonFromSquareUsingGet() throws Exception {
-		mvc.perform(MockMvcRequestBuilders
-				.get("/api/shaders/square/2"))
+	public void ShouldReturnJsonFromCircleUsingPathVariable() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/api/shapes/square/2"))
+			.andExpect(status().isOk())
+			.andExpect(content().string("{\"area\":4.0}"));
+	}
+	
+	@Test
+	public void ShouldReturnJsonFromCircleUsingRequestParam() throws Exception{
+		mvc.perform(MockMvcRequestBuilders.get("/api/shapes/square/")
+			.param("side", "4"))
 				.andExpect(status().isOk())
-				.andExpect(content().string("{\"area\":4.0}"));
+				.andExpect(content().string("{\"area\":16.0}"));
 	}
 }

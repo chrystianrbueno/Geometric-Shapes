@@ -18,6 +18,10 @@ public class CircleModel implements Figures{
 		// TODO Auto-generated method stub
 		return Math.pow(radius, 2) * Math.PI;
 	}
+	
+	public double getRadius() {
+		return radius;
+	}
 
 	@Override
 	public String toString() {

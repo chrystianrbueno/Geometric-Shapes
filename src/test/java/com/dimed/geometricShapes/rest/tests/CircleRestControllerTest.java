@@ -22,9 +22,17 @@ public class CircleRestControllerTest {
 	private MockMvc mvc;
 	
 	@Test
-	public void ShouldReturnJsonFromCircleUsingGet() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/api/shaders/circle/1"))
-		.andExpect(status().isOk())
-		.andExpect(content().string("{\"area\":3.141592653589793}"));
+	public void ShouldReturnJsonFromCircleUsingPathVariable() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/api/shapes/circle/1"))
+			.andExpect(status().isOk())
+			.andExpect(content().string("{\"radius\":1.0,\"area\":3.141592653589793}"));
+	}
+	
+	@Test
+	public void ShouldReturnJsonFromCircleUsingRequestParam() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/api/shapes/circle/")
+			.param("radius", "2"))
+				.andExpect(status().isOk())
+				.andExpect(content().string("{\"radius\":2.0,\"area\":12.566370614359172}"));
 	}
 }

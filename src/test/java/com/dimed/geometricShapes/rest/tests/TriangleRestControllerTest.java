@@ -9,6 +9,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 /**
  * 
  * @author Chrystian Rocha
@@ -35,5 +38,16 @@ public class TriangleRestControllerTest {
 			.andExpect(status().isOk())
 			.andExpect(content().string("{\"area\":21.0}"));
 		
+	}
+	
+	@Test
+	public void ShouldReturnJsonFromTriangleUsingRequestParamAndUsingMultiParams() throws Exception{
+	    MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+	    params.add("base", "6");
+	    params.add("height", "7");
+		mvc.perform(MockMvcRequestBuilders.get("/api/shapes/triangle/")
+		.params(params))
+			.andExpect(status().isOk())
+			.andExpect(content().string("{\"area\":21.0}"));
 	}
 }
